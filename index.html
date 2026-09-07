@@ -131,10 +131,23 @@
         .hero {
             height: 100vh;
             position: relative;
-            padding: 160px 0 100px;
+            padding: 120px 0 40px; /* Adjusted padding to ensure smooth alignment */
             text-align: center;
-            background: linear-gradient(135deg, rgba(255, 246, 248, 0.534) 0%, rgba(252, 248, 246, 0.596) 100%), url('Back.jpg') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(255, 246, 248, 0.534) 0%, rgba(252, 248, 246, 0.596) 100%),
+                        url('Back.jpg') center/cover no-repeat;
             border-bottom: 1px solid var(--soft-border);
+            display: flex;
+            flex-direction: column;
+            justify-content:center; /* Align container content to the bottom */
+            min-height: 85vh;
+        }
+
+        .hero .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
         }
 
         .hero-avatar {
@@ -165,12 +178,12 @@
             font-weight: 600;
             color: var(--accent-rose);
             font-size: 0.85rem;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .hero-bio {
             max-width: 580px;
-            margin: 0 auto 28px;
+            margin: 0 auto 20px;
             color: var(--text-muted);
             font-size: 1.05rem;
         }
@@ -182,9 +195,10 @@
             padding: 12px 28px;
             border-radius: var(--radius-full);
             box-shadow: var(--shadow-sm);
-            margin-bottom: 32px;
             border: 1px solid var(--soft-border);
             font-size: 0.88rem;
+            margin-bottom: 0;
+            order: 2; /* Positioned at the very bottom of the hero section */
         }
 
         .stats-badge span {
@@ -193,10 +207,14 @@
         }
 
         .cta-group {
+            margin-top: auto;
             display: flex;
             justify-content: center;
             gap: 16px;
             flex-wrap: wrap;
+            width: 100%;
+            margin-bottom: 20px;
+            order: 1; /* Sits directly above the stats badge */
         }
 
         /* --- BUTTONS --- */
